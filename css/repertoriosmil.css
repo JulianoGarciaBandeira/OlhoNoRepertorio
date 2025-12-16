@@ -166,6 +166,10 @@ ul {
     }
 }
 
+.cardFlip {
+    touch-action: manipulation;
+}
+
 /* Conteúdo do Card */
 .tituloCard {
     display: flex;

@@ -25,18 +25,51 @@ document.addEventListener('DOMContentLoaded', () => {
       paginas.push(pagina);
     }
 
-    // Flip dos cards
-    grid.querySelectorAll('.cardFlip .cardInner').forEach(cardInner => {
-      cardInner.removeEventListener('click', cardInner.__flipHandler);
-      const handler = (e) => {
-        const tag = e.target.tagName.toLowerCase();
-        if (tag === 'a' || tag === 'button') return;
-        cardInner.classList.toggle('virado');
-      };
-      cardInner.__flipHandler = handler;
-      cardInner.addEventListener('click', handler);
+    // // Flip dos cards
+    // grid.querySelectorAll('.cardFlip .cardInner').forEach(cardInner => {
+    //   cardInner.removeEventListener('click', cardInner.__flipHandler);
+    //   const handler = (e) => {
+    //     const tag = e.target.tagName.toLowerCase();
+    //     if (tag === 'a' || tag === 'button') return;
+    //     cardInner.classList.toggle('virado');
+    //   };
+    //   cardInner.__flipHandler = handler;
+    //   cardInner.addEventListener('click', handler);
       
-    });
+    // });
+    
+    // Flip dos cards
+grid.querySelectorAll('.cardFlip .cardInner').forEach(cardInner => {
+    // Garante a remoção de listeners antigos
+    cardInner.removeEventListener('click', cardInner.__flipHandler);
+    cardInner.removeEventListener('touchend', cardInner.__flipHandler); // <-- Adicionado
+
+    const handler = (e) => {
+        // ESSENCIAL: Impede que o toque/clique se propague, evitando cliques duplos ou acidentais
+        e.stopPropagation(); 
+        
+        // Se for um evento 'touchend' (mobile), previne o evento 'click' subsequente
+        // para evitar que o card vire duas vezes
+        if (e.type === 'touchend') {
+            e.preventDefault(); 
+        }
+
+        const tag = e.target.tagName.toLowerCase();
+        // Não vira o card se o clique/toque for em um link ou botão
+        if (tag === 'a' || tag === 'button') return;
+        
+        cardInner.classList.toggle('virado');
+    };
+
+    cardInner.__flipHandler = handler;
+    
+    // Mantém o 'click' para desktop e como fallback mobile
+    cardInner.addEventListener('click', handler);
+    
+    // Adiciona o 'touchend' para otimizar o toque no mobile
+    cardInner.addEventListener('touchend', handler); // <-- A principal mudança!
+});
+
 
     // Paginação
     paginacao.innerHTML = '';
