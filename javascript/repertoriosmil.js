@@ -24,22 +24,9 @@ document.addEventListener('DOMContentLoaded', () => {
       grid.appendChild(pagina);
       paginas.push(pagina);
     }
-
-    // // Flip dos cards
-    // grid.querySelectorAll('.cardFlip .cardInner').forEach(cardInner => {
-    //   cardInner.removeEventListener('click', cardInner.__flipHandler);
-    //   const handler = (e) => {
-    //     const tag = e.target.tagName.toLowerCase();
-    //     if (tag === 'a' || tag === 'button') return;
-    //     cardInner.classList.toggle('virado');
-    //   };
-    //   cardInner.__flipHandler = handler;
-    //   cardInner.addEventListener('click', handler);
-      
-    // });
     
     // Mude para o container mais externo
-document.querySelectorAll('.cardFlip').forEach(cardFlip => { 
+    document.querySelectorAll('.cardFlip').forEach(cardFlip => { 
     const cardInner = cardFlip.querySelector('.cardInner');
     
     // Garante que o cardInner existe para evitar erros
