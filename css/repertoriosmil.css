@@ -188,6 +188,10 @@ ul {
     pointer-events: none;
 }
 
+.cardInner.virado {
+    transform: rotateY(180deg);
+}
+
 /* Conteúdo do Card */
 .tituloCard {
     display: flex;
