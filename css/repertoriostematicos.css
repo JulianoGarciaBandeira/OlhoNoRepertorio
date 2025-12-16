@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* Reset do CSS*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f3f3f3;
+    color: #070707; 
+    font-family: "Montserrat", sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+/*Estilizações específicas*/ 
+
+.nav {
+    max-width: 100%;
+    margin: 0rem 0rem 0rem 2.5rem;
+    padding: 2rem 0rem 2rem 0rem;
+
+    display: flex;
+    flex-direction: row; 
+    justify-content: center;
+    align-items: center;
+    font-family: "Montserrat", sans-serif;  
+}
+.logonav {
+    font-size: 1.25rem; 
+    font-weight: 800;
+    text-decoration-color: #070707;
+}
+.menunav {
+    font-size: 1rem; 
+    display: flex;
+    flex-direction: row; 
+    justify-content: space-between;
+    gap: 1.5rem; 
+}
+.hiperlinkTelaInicial {
+    color:#acadb0;
+}
+.hiperlinkTelaInicial:hover{
+    color:#070707; 
+}
+.hiperlinkPerfil {
+    color:#acadb0;
+}
+.hiperlinkPerfil:hover{
+    color:#070707; 
+}
+
+/* Barra de Pesquisa*/
+
+.barraPesquisa{
+    display: block;             /* garante que o margin:auto funcione */
+    margin: 0 auto;           
+    width: 400px;               /* largura fixa */
+    border: 2px solid #070707;  
+    border-radius: 1rem;        
+    background-color: transparent; 
+    padding: 0.5rem 1rem;       
+    font-size: 1rem;
+}
+.campoBuscar{
+    width: 100%;
+    border: none; 
+    background-color: transparent;
+    /* remove estilizações padrão */
+    outline: none;             /* remove contorno azul ao focar */
+    box-shadow: none;          /* remove sombra padrão */
+    -webkit-appearance: none;  /* remove estilo padrão do Chrome/Safari */
+    -moz-appearance: none;     /* remove estilo padrão do Firefox */
+    appearance: none;           /* remove estilo padrão geral */
+}
+
+/*Cards */
+#semResultado{
+    display: none;
+    font-weight: 600;
+}
+.conjuntoCards{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin: 2.5rem 2rem 2.5rem 2rem; 
+}
+
+.card {
+    background-color: #acadb0;
+    color: #070707;
+    border-radius: 1rem;
+    font-weight: 600;
+
+    padding: 1rem;
+
+    max-width: 400px;
+    width: 90%;
+
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    font-family: "Montserrat", sans-serif;
+
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+
+    transition: transform 0.2s ease-in-out;
+
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+
+    
+}
+.card:hover {
+    transform: scale(1.04);
+
+    box-shadow: 
+    0 0 20px #070707,
+    0 0 25px #070707;
+    transform: translateY(-4px); 
+}
+
+/* TITULO (nome + ano) */
+.tituloCard {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    gap: .35rem;
+
+    font-size: 1.25rem;
+    font-weight: 700;
+
+    margin-bottom: .7rem;
+}
+
+/* Nome do filme */
+.nomeCard {
+    font-weight: 700;
+}
+
+/* Ano do filme (estilo diferente) */
+.anoCard {
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+/* DESCRIÇÃO */
+.descricaoCard {
+    text-align: left;
+    line-height: 1.4;
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+/* Itens (Autoria:, Gênero:, etc) */
+.itensCard {
+    font-weight: 500;
+    color: #070707; 
+}
+
+/*Rodapé */
+
+.body {
+    display: grid;
+    grid-template-rows: auto 1fr auto; /* header | conteúdo | footer */
+    min-height: 100vh;
+    margin: 0;
+} 
+
+/* Conteúdo principal (cards + barra de busca) */
+.mainContent {
+    padding: 2rem;
+}
+
+/* Rodapé */
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+body {
+    display: flex;
+    flex-direction: column;
+}
+footer {
+    margin-top: auto;
+}
+.rodape{
+    background-color: #070707;
+    color: #b289f9;
+
+    padding: 2rem; 
+
+    font-weight: 600;
+
+    width: 100%;
+}
+

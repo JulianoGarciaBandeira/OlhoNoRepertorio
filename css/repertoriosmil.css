@@ -1,0 +1,299 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: #f3f3f3;
+    color: #070707;
+    font-family: "Montserrat", sans-serif;
+}
+a {
+    text-decoration: none;
+}
+ul {
+    list-style: none;
+}
+
+/* Navbar */
+.nav {
+    max-width: 100%;
+    margin-left: 2.5rem;
+    padding: 2rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.logonav {
+    font-size: 1.25rem;
+    font-weight: 800;
+    text-decoration-color: #070707;
+}
+.menunav {
+    font-size: 1rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 1.5rem;
+}
+.hiperlinkTelaInicial,
+.hiperlinkPerfil {
+    color: #acadb0;
+    transition: color 0.3s ease;
+}
+.hiperlinkTelaInicial:hover,
+.hiperlinkPerfil:hover {
+    color: #070707;
+}
+
+/*  Menu de filtros/seções */
+.menucontainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: -.5rem;
+}
+.menuclick {
+    display: flex;
+    gap: 1.25rem;
+    font-weight: 700;
+    color: #070707;
+}
+.linkfilmes,
+.linkseries,
+.linklivros {
+    color: #acadb0;
+}
+.linkfilmes:hover,
+.linkseries:hover,
+.linklivros:hover {
+    color: #070707;
+}
+
+/* Seções dos Cards */
+.tituloCardVerde {
+    font-size: 1.5rem;
+    font-weight: 800;
+    display: block;
+    margin-bottom: 1rem;
+}
+.tituloCardRoxo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #f3f3f3;
+    display: block;
+    margin-bottom: 1rem;
+}
+.secaoCardRoxo {
+    background-color: #070707;
+    border-radius: 1.5rem;
+    padding: 1.5rem;
+}
+.secaoCardVerde {
+    padding: 1.5rem;
+}
+
+/* Flip dos Cards */
+.cardFlip {
+    width: 300px;
+    perspective: 1000px;
+    display: flex;
+    flex-direction: column;
+}
+.cardInner {
+    position: relative;
+    width: 100%;
+    height: 300px; /* altura fixa para flip funcionar */
+    transform-style: preserve-3d;
+    transition: transform 0.8s;
+}
+.cardFront,
+.cardBack {
+    position: absolute; /* usar absolute para coincidir e sobrepor */
+    width: 100%;
+    height: 100%; /* mesma altura do cardInner */
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 0.75rem;
+    background-color: #d2f874;
+    color: #070707;
+    border-radius: 1rem;
+    font-weight: 600;
+    backface-visibility: hidden;
+}
+.secaoCardRoxo .cardFront {
+    position: absolute; /* usar absolute para coincidir e sobrepor */
+    width: 100%;
+    height: 100%; /* mesma altura do cardInner */
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 0.75rem;
+    background-color: #b289f9;
+    color: #070707;
+    border-radius: 1rem;
+    font-weight: 600;
+    backface-visibility: hidden;
+}
+.secaoCardRoxo .cardBack {
+    position: absolute; /* usar absolute para coincidir e sobrepor */
+    width: 100%;
+    height: 100%; /* mesma altura do cardInner */
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 0.75rem;
+    background-color: #b289f9;
+    color: #070707;
+    border-radius: 1rem;
+    font-weight: 600;
+    backface-visibility: hidden;
+}
+.cardBack {
+    transform: rotateY(180deg);
+}
+
+/* Flip hover apenas em dispositivos com mouse */
+@media (hover: hover) and (pointer: fine) {
+    .cardFlip:hover .cardInner {
+        transform: rotateY(180deg);
+    }
+}
+
+/* Conteúdo do Card */
+.tituloCard {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.7rem;
+}
+.nomeCard {
+    font-weight: 700;
+}
+.anoCard {
+    font-weight: 500;
+    font-size: 1rem;
+}
+.descricaoCard {
+    text-align: left;
+    line-height: 1.4;
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+.itensCard {
+    font-weight: 500;
+    color: #070707;
+}
+.cardBacktexto{
+    font-size: .71rem;
+    text-align: justify;
+}
+.seta {
+    width: 10%;
+    position: absolute;
+    bottom: 0.3rem;
+    right: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+/* Carrossel */
+.carrosselWrapper {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    width: 100%;
+    padding-bottom: 1rem;
+    scroll-behavior: smooth;
+}
+.carrosselWrapper::-webkit-scrollbar {
+    display: none;
+}
+.carrosselGrid {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 100%; /* cada página = largura do wrapper */
+    gap: 1rem;
+    padding: 0.5rem;
+    align-items: start;
+}
+
+/* Páginas do carrossel (cada página = 3x2) */
+.pagina {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, auto); /* altura automática */
+    gap: 1rem;
+    padding: 0.5rem;
+    scroll-snap-align: start;
+}
+.pagina .cardFlip {
+    justify-self: center;
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+}
+
+/* Paginação por bolinhas */
+.carrosselPaginacao {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: none;
+    background-color: #acadb0;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+.dot.ativo {
+    background-color: #070707;
+}
+.secaoCardRoxo .dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: none;
+    background-color: #f3f3f3;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+.secaoCardRoxo .dot.ativo {
+    background-color: #b289f9;
+}
+
+/* Rodapé */
+.rodape {
+    background-color: #070707;
+    color: #b289f9;
+    padding: 2rem;
+    font-weight: 600;
+    width: 100%;
+    position: relative;
+}
+
+/* Responsividade */
+@media (max-width: 800px) {
+    .pagina {
+        grid-template-columns: 1fr; /* 1 coluna */
+        grid-template-rows: auto;   /* altura automática */
+        gap: 1rem;
+    }
+
+    .cardFlip {
+        max-width: 92%;
+    }
+}

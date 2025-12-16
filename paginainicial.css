@@ -1,0 +1,325 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* Reset do CSS*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f3f3f3;
+    color: #070707; 
+    font-family: "Montserrat", sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+/*Estilizações específicas*/ 
+.nav {
+    max-width: 95%;
+    margin: 0 auto;
+    padding: 2rem 0rem 2rem 0rem;
+    display: flex; 
+    flex-direction: row; 
+    justify-content: space-between;
+    
+    align-items: center;
+    font-family: "Montserrat", sans-serif; 
+}
+.logonav {
+    font-size: 1.25rem; 
+    font-weight: 800;
+    text-decoration-color: #070707;
+}
+.menunav {
+    font-size: 1rem; 
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+.hiperlinkTelaInicial, .hiperlinkPerfil {
+    color: #acadb0;
+    transition: color 0.3s ease;
+}
+.hiperlinkTelaInicial:hover, .hiperlinkPerfil:hover {
+    color: #070707;
+}
+
+/* Estilizando do Texto Inicial*/ 
+.textoInicial {
+    display: flex;
+    flex-direction: row;
+
+    width: 95%;
+    
+    margin: 8rem auto 5rem auto;
+    padding: 2rem 0.25rem;
+    
+    align-items: left;
+    font-family: "Montserrat", sans-serif;
+}
+.textoInicial1 {
+    font-size: clamp(1.8rem, 3.7vw + 1rem, 4.044rem);
+    font-weight: 600;
+}
+.textoInicial2 {
+    font-size: clamp(1.6rem, 3.7vw + 1rem, 3.988rem);
+    font-weight: 800;
+}
+.textoInicial3 {
+    font-size: clamp(1.45rem, 3.5vw + 1rem, 3.406rem);
+    font-weight: 600;
+}
+/* Destaque do texto inicial */
+.textoDestaque {
+  font-weight: 700;
+  display: inline;                 /* mantém fluxo inline */
+  line-height: 1.3;
+  position: relative;
+
+  /* grifo por trás do texto usando linear-gradient */
+  background-image: linear-gradient(var(--cor-destaque), var(--cor-destaque));
+  background-repeat: no-repeat;
+  background-size: 0% 100%;        /* começa sem grifo */
+  background-position: 0 0;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone; /* Safari */
+  border-radius: 0.3em;
+
+  /* animação de preenchimento */
+  animation: highlightSwipe var(--duracao) ease forwards;
+}
+
+/* Animação de swipe */
+@keyframes highlightSwipe {
+  from { background-size: 0% 100%; }
+  to { background-size: 100% 100%; }
+}
+
+/* Cores e duração */
+.destaque-roxo { --cor-destaque: #b289f9; --duracao: 1.2s; }
+.destaque-verde { --cor-destaque: #d2f874; --duracao: 1.6s; }
+
+/* Separação visual entre as seções */
+.textoIniciallinha {
+    width: 100%;
+    height: 0.125rem;
+    background-color: #acadb0;
+    border: none;
+    margin-top: 10rem;
+    padding-right: 2.5rem ;
+}
+
+/* texto do Objetivo do Site */
+.TextoObjetivo {
+    font-size: clamp(1.5rem, 2vw + 1rem, 2.5rem);
+
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;  /* controla o alinhamento vertical */
+    align-items: flex-end;        /* controla o alinhamento horizontal (direita) */
+    margin: -1rem 2.5rem 0 0; /* mesmas margens da seção anterior */
+    
+}
+.TextoObjetivoDestaque{
+    background-color: #b289f9;
+    border-radius: 1rem;
+    font-style: italic;  
+}
+.paragrafoObjetivo{
+    /* font-size: clamp(1.2rem, 1.875rem, 1.875rem); */
+    font-size: clamp(1rem, 1.5vw + 1rem, 2rem);
+    font-weight: 500;
+    text-align: right;
+}
+.paragrafoObjetivoDestaque{
+    background-color:#d2f874;
+    border-radius: 1rem;
+    font-style: italic;  
+}
+
+/* Cards - Base */
+.card{
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    gap: 1rem; 
+    margin: 8rem 2.5rem 5rem 2.5rem;
+    padding: 2rem, 0.25rem, 2rem, 0.25rem;
+}
+
+/* Card 1 - Preto */
+.card1 {
+    background-color: #070707;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    max-width: 400px;          /* largura máxima do card */
+    width: 90%;                /* ocupa até 90% da tela em telas pequenas */
+    word-wrap: break-word;     /* quebra palavras longas */
+    overflow-wrap: break-word; /* compatibilidade */            
+
+    color: #f3f3f3;
+
+    transition: transform 0.2s ease-in-out;
+
+    position: relative; /* necessário para posicionar a seta dentro */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-top: 10rem;
+}
+.card1:hover {
+    transform: scale(1.04);
+}
+.TextoCard1Destaque{
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+.ParágrafoCard1 {
+    margin-bottom: 1.5rem;
+}
+
+/* Card 2 - Cinza */
+.card2 {
+    background-color: #acadb0;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    max-width: 400px;          /* largura máxima do card */
+    width: 90%;                /* ocupa até 90% da tela em telas pequenas */
+    word-wrap: break-word;     /* quebra palavras longas */
+    overflow-wrap: break-word; /* compatibilidade */            
+
+    color: #070707;
+
+    transition: transform 0.2s ease-in-out;
+
+    position: relative; /* necessário para posicionar a seta dentro */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-top: 10rem;
+}
+.card2:hover {
+    transform: scale(1.04);
+}
+.TextoCard2Destaque{
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+.ParágrafoCard2 {
+    margin-bottom: 1.5rem;
+}
+.seta{ 
+    width: 15%;
+    position: absolute;
+    top: 1rem;   
+    right: 1rem; 
+}
+
+/* Rodapé */
+.rodape {
+    background-color: #070707;
+    color: #f3f3f3;
+    display: flex;
+    flex-direction: column;
+    align-items:flex-start;
+    justify-content: center;
+    border-top-right-radius: 1rem;
+    border-top-left-radius: 1rem;
+    position: relative;
+    overflow: hidden;
+}
+.rodapeTitulo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-top: 1.75rem;
+    margin-bottom: 0.75rem;
+    margin-left: 3.5rem;
+    text-align: left;
+}
+.RodapeConteudo{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.rodapeParagrafo {
+  font-size: 1rem;
+  font-weight: 500;
+  max-width: 85ch;    /* limita largura em caracteres para boa leitura */
+  line-height: 1.45;
+  text-align: left;
+  margin-left: 3.5rem;
+  text-align: justify;
+}
+.LogodoIFAM{
+  width: 7%;      
+  height: auto;
+  object-fit: contain;
+  align-self: center;  
+  margin-right: 3.5rem;
+}
+.rodadeOlhoNoRepertorio {
+    font-size: clamp(6vw, 8vw, 10vw); 
+    color: #b289f9;
+    font-weight: 800;
+    text-align: center;
+    width: 100vw; 
+    margin: 0;
+    position: relative;
+    margin-top: -2.25rem;
+    bottom: -2.25rem; 
+    white-space: nowrap; 
+}
+
+/* Reposnsividade */
+@media (max-width: 768px) {
+    .nav {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .textoInicial {
+        margin: auto;
+    }
+    .TextoObjetivo {
+        text-align: justify;
+        padding-left: 2.5rem;
+        
+    }
+    .LogodoIFAM {
+        display: none;
+    }
+    .rodadeOlhoNoRepertorio {
+        display:none; 
+    }
+    .rodapeParagrafo {
+       padding-bottom: 2rem;
+       padding-right: 2.5rem;
+       text-align: justify;
+    }
+    .card{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+}
+
+@media (max-width: 834px) {
+    .paragrafoObjetivo{
+        text-align: right;
+    }
+
+}
+
+

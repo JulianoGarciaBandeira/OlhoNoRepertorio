@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* Reset do CSS*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f3f3f3;
+    color: #070707; 
+    font-family: "Montserrat", sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+/*Estilizações específicas*/ 
+.nav {
+    max-width: 100%;
+    margin: 0rem 0rem 0rem 2.5rem;
+    padding: 2rem 0rem 2rem 0rem;
+
+    display: flex;
+    flex-direction: row; 
+    justify-content: center;
+    align-items: center;
+    font-family: "Montserrat", sans-serif; 
+}
+.logonav {
+    font-size: 1.25rem; 
+    font-weight: 800;
+    text-decoration-color: #070707;
+}
+.menunav {
+    font-size: 1rem; 
+    display: flex;
+    flex-direction: row; 
+    justify-content: space-between;
+    gap: 1.5rem; 
+}
+.hiperlinkTelaInicial {
+    color:#acadb0;
+}
+.hiperlinkTelaInicial:hover{
+    color:#070707; 
+}
+.hiperlinkPerfil {
+    color:#acadb0;
+}
+.hiperlinkPerfil:hover{
+    color:#070707; 
+}
+
+/*Iframe do Google Forms*/
+.iframe-container {
+    max-width: 1100px; /* largura máxima do forms */
+    width: 100%;       /* ocupar toda a largura disponível */
+    margin: 0 auto;    /* centraliza */
+    padding: 0 1rem;   /* margem lateral em telas pequenas */
+}
+.iframe-container iframe {
+    width: 100%;       /* torna responsivo */
+    height: 2956px;    /* altura fixa do forms (pode ajustar) */
+    border: none;
+}
+
+/*Rodapé */
+.rodape{
+    background-color: #070707;
+    color: #b289f9;
+
+    padding: 2rem; 
+
+    font-weight: 600;
+
+    position: fixed;
+    bottom:0;
+    width: 100%;
+    text-align: justify;
+
+    position: relative;
+}
