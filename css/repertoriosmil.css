@@ -33,6 +33,13 @@ ul {
         background-color: #ffffff !important; 
         /* Cor de Texto Padrão (Mantém o Escuro) */
         color: #070707 !important;
+
+        /* LINHAS NOVAS CRUCIAIS PARA BLOQUEIO EM NAVEGADORES AGRESSIVOS */
+        -webkit-filter: none !important; /* Versão para navegadores baseados em Chromium */
+        -moz-filter: none !important;
+        
+        /* Reseta a inversão de cores mais complexa, se houver */
+        -webkit-text-fill-color: initial !important;
     }
 
     /* --- 2. SEÇÃO ROXA ESCURA (INVERSÃO DO DARK MODE) --- */
@@ -48,7 +55,7 @@ ul {
     .secaoCardRoxo .tituloCardRoxo {
         color: #f3f3f3 !important;
     }
-
+    
     /* --- 3. NAVEGAÇÃO E LINKS --- */
 
     /* Links Inativos (Cinza Claro) */

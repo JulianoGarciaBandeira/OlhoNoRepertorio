@@ -32,6 +32,13 @@ ul {
         /* Garante que o fundo e o texto fiquem na cor clara */
         background-color: #acadb0 !important; 
         color: #070707 !important;
+
+        /* LINHAS NOVAS CRUCIAIS PARA BLOQUEIO EM NAVEGADORES AGRESSIVOS */
+        -webkit-filter: none !important; /* Versão para navegadores baseados em Chromium */
+        -moz-filter: none !important;
+        
+        /* Reseta a inversão de cores mais complexa, se houver */
+        -webkit-text-fill-color: initial !important;
     }
     /* --- 2. BARRA DE PESQUISA --- */
 

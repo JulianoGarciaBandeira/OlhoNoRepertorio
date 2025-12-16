@@ -40,6 +40,18 @@ ul {
         background-color: #ffffff !important; 
         /* Cor de Texto Padrão (Mantém o Escuro) */
         color: #070707 !important;
+
+        /* LINHAS NOVAS CRUCIAIS PARA BLOQUEIO EM NAVEGADORES AGRESSIVOS */
+        -webkit-filter: none !important; /* Versão para navegadores baseados em Chromium */
+        -moz-filter: none !important;
+        
+        /* Reseta a inversão de cores mais complexa, se houver */
+        -webkit-text-fill-color: initial !important;
+    }
+    .cardFront, .cardBack, .secaoCardRoxo, .rodape, .nav { 
+        /* Aplique também aos containers que possuem cores de fundo específicas */
+        -webkit-filter: none !important;
+        filter: none !important;
     }
 
     /* --- 2. NAVEGAÇÃO E LINKS --- */
