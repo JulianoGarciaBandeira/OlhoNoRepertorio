@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // });
     
     // Mude para o container mais externo
-grid.querySelectorAll('.cardFlip').forEach(cardFlip => { 
+document.querySelectorAll('.cardFlip').forEach(cardFlip => { 
     const cardInner = cardFlip.querySelector('.cardInner');
     
     // Garante que o cardInner existe para evitar erros
