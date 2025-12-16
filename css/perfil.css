@@ -22,6 +22,64 @@ ul {
     list-style: none;
 }
 
+/* Iibindo o dark mode*/
+
+@media (prefers-color-scheme: dark) {
+
+    /* --- 1. ELEMENTOS BASE DA PÁGINA --- */
+
+    /* Protege o fundo de toda a página e a cor do texto padrão.
+       Assumindo que o fundo padrão do body seja branco (#ffffff).
+    */
+    html, body {
+        /* Desativa filtros e reforça o esquema claro */
+        filter: none !important; 
+        color-scheme: light !important;
+        
+        /* Fundo da Página (Mantém o Claro) */
+        background-color: #ffffff !important; 
+        /* Cor de Texto Padrão (Mantém o Escuro) */
+        color: #070707 !important;
+    }
+
+    /* --- 2. NAVEGAÇÃO E LINKS --- */
+
+    /* Protege o texto e a cor de links inativos/ativos na barra de navegação */
+    .logonav,
+    .menunav,
+    .hiperlinkTelaInicial:hover,
+    .hiperlinkPerfil:hover {
+        /* Cor dos textos e links ativos (Preto) */
+        color: #070707 !important;
+        filter: none !important;
+    }
+
+    .hiperlinkTelaInicial,
+    .hiperlinkPerfil {
+        /* Cor dos links inativos (Cinza Claro) */
+        color: #acadb0 !important;
+    }
+    
+    /* --- 3. RODAPÉ --- */
+    
+    /* O rodapé é escuro, protegemos ele de ser invertido para branco/claro. */
+    .rodape {
+        /* Fundo do rodapé (Preto) */
+        background-color: #070707 !important;
+        /* Texto do rodapé (Roxo Claro) */
+        color: #b289f9 !important; 
+        filter: none !important;
+    }
+    
+    /* --- 4. IFRAME CONTAINER --- */
+    
+    /* Garante que o container do Forms não seja escurecido */
+    .iframe-container {
+        background-color: transparent !important; /* Ou a cor que você usa no fundo dele */
+        filter: none !important;
+    }
+}
+
 /*Estilizações específicas*/ 
 .nav {
     max-width: 100%;
