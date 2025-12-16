@@ -18,30 +18,6 @@ ul {
     list-style: none;
 }
 
-/* Inibindo o dark mode */
-
-@media (prefers-color-scheme: dark) {
-
-    /* --- 1. ELEMENTOS BASE DA PÁGINA --- */
-
-    html, body {
-        /* Desativa filtros e reforça o esquema claro */
-        filter: none !important; 
-        color-scheme: light !important;
-        
-        /* Fundo da Página (Mantém o Claro) */
-        background-color: #ffffff !important; 
-        /* Cor de Texto Padrão (Mantém o Escuro) */
-        color: #070707 !important;
-
-        /* LINHAS NOVAS CRUCIAIS PARA BLOQUEIO EM NAVEGADORES AGRESSIVOS */
-        -webkit-filter: none !important; /* Versão para navegadores baseados em Chromium */
-        -moz-filter: none !important;
-        
-        /* Reseta a inversão de cores mais complexa, se houver */
-        -webkit-text-fill-color: initial !important;
-}
-
 /* Navbar */
 .nav {
     max-width: 100%;

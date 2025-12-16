@@ -22,30 +22,6 @@ ul {
     list-style: none;
 }
 
-/* Iibindo o dark mode*/
-
-@media (prefers-color-scheme: dark) {
-
-    /* --- 1. ELEMENTOS BASE DA PÁGINA --- */
-
-    /* Protege o fundo de toda a página e a cor do texto padrão.
-       Assumindo que o fundo padrão do body seja branco (#ffffff).
-    */
-    html, body {
-        /* Desativa filtros e reforça o esquema claro */
-        filter: none !important; 
-        color-scheme: light !important;
-        
-        /* Fundo da Página (Mantém o Claro) */
-        background-color: #ffffff !important; 
-        /* Cor de Texto Padrão (Mantém o Escuro) */
-        color: #070707 !important;
-
-        /* LINHAS NOVAS CRUCIAIS PARA BLOQUEIO EM NAVEGADORES AGRESSIVOS */
-        -webkit-filter: none !important; /* Versão para navegadores baseados em Chromium */
-        -moz-filter: none !important;
-}
-
 /*Estilizações específicas*/ 
 .nav {
     max-width: 100%;
