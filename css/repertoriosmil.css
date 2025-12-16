@@ -166,8 +166,26 @@ ul {
     }
 }
 
-.cardFlip {
+.cardFlip .cardInner {
     touch-action: manipulation;
+}
+
+/* Quando a parte de trás está virada para longe, ela não deve interagir. */
+.cardBack {
+    /* ... outras propriedades de layout */
+    
+    /* Esta linha é crucial: */
+    pointer-events: none; 
+}
+
+/* E você reativa a interação apenas quando ele for a camada da frente */
+.cardInner.virado .cardBack {
+    pointer-events: all;
+}
+
+/* Garante que os elementos internos (como <img>) não roubem o evento de toque do pai */
+.cardFlip img {
+    pointer-events: none;
 }
 
 /* Conteúdo do Card */
