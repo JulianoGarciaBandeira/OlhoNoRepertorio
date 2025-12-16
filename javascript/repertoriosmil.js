@@ -38,38 +38,42 @@ document.addEventListener('DOMContentLoaded', () => {
       
     // });
     
-    // Flip dos cards
-grid.querySelectorAll('.cardFlip .cardInner').forEach(cardInner => {
-    // Garante a remoção de listeners antigos
-    cardInner.removeEventListener('click', cardInner.__flipHandler);
-    cardInner.removeEventListener('touchend', cardInner.__flipHandler); // <-- Adicionado
+    // Mude para o container mais externo
+grid.querySelectorAll('.cardFlip').forEach(cardFlip => { 
+    const cardInner = cardFlip.querySelector('.cardInner');
+    
+    // Garante que o cardInner existe para evitar erros
+    if (!cardInner) return; 
 
+    // Remova listeners do cardInner (onde estava antes)
+    cardInner.removeEventListener('click', cardInner.__flipHandler);
+    cardInner.removeEventListener('touchend', cardInner.__flipHandler);
+
+    // Vamos anexar o evento no elemento PAI, o cardFlip
+    cardFlip.removeEventListener('click', cardFlip.__flipHandler); 
+    cardFlip.removeEventListener('touchend', cardFlip.__flipHandler);
+    
     const handler = (e) => {
-        // ESSENCIAL: Impede que o toque/clique se propague, evitando cliques duplos ou acidentais
         e.stopPropagation(); 
         
-        // Se for um evento 'touchend' (mobile), previne o evento 'click' subsequente
-        // para evitar que o card vire duas vezes
         if (e.type === 'touchend') {
             e.preventDefault(); 
         }
 
         const tag = e.target.tagName.toLowerCase();
-        // Não vira o card se o clique/toque for em um link ou botão
-        if (tag === 'a' || tag === 'button') return;
+        // A lógica de ignorar links/botões continua
+        if (tag === 'a' || tag === 'button') return; 
         
-        cardInner.classList.toggle('virado');
+        // Aplica a classe no cardInner (que é quem sofre o flip)
+        cardInner.classList.toggle('virado'); 
     };
 
-    cardInner.__flipHandler = handler;
+    cardFlip.__flipHandler = handler;
     
-    // Mantém o 'click' para desktop e como fallback mobile
-    cardInner.addEventListener('click', handler);
-    
-    // Adiciona o 'touchend' para otimizar o toque no mobile
-    cardInner.addEventListener('touchend', handler); // <-- A principal mudança!
+    // Adiciona o evento no elemento PAI (.cardFlip)
+    cardFlip.addEventListener('click', handler);
+    cardFlip.addEventListener('touchend', handler);
 });
-
 
     // Paginação
     paginacao.innerHTML = '';
